@@ -39,3 +39,5 @@ Install it in the following way:
 	    option device '/sys/devices/platform/ehci-platform/usb1/1-1'
 	    option apn 'Broadband'
 	    option metric '20'
+
+NOTE - for Luci WebUI support see - https://github.com/sfx2000/luci-proto-modemmanager
