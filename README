@@ -33,12 +33,9 @@ Install it in the following way:
 
 6) Once installed, you can configure the 2G/3G/4G modem connections directly in
    /etc/config/network as in the following example:
-
-    config interface 'broadband'
-        option device   '/sys/devices/platform/soc/20980000.usb/usb1/1-1/1-1.2/1-1.2.1'
-        option proto    'modemmanager'
-        option apn      'ac.vodafone.es'
-        option username 'vodafone'
-        option password 'vodafone'
-        option pincode  '7423'
-        option lowpower '1'
+              
+    config interface 'WWAN'
+	    option proto 'modemmanager'
+	    option device '/sys/devices/platform/ehci-platform/usb1/1-1'
+	    option apn 'Broadband'
+	    option metric '20'
