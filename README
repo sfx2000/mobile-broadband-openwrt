@@ -9,29 +9,34 @@ This is an unofficial OpenWrt feed for libqmi, libmbim and ModemManager.
 This repository is intended to be layered on-top of an OpenWrt buildroot.
 Install it in the following way:
 
-1) Edit your feeds.conf and add the configuration of the new feed:
+1) Add additional dependencies (debian/ubuntu)
+
+    apt-get install pkg-config automake autoconf intltool libtool gtk-doc-tools
+    apt-get install libglib2.0-dev libgudev-1.0-dev
+
+2) Edit your feeds.conf and add the configuration of the new feed:
     $ vim feeds.conf
         src-git mobile_broadband https://github.com/sfx2000/mobile-broadband-openwrt.git
 
-2) Update the feed:
+3) Update the feed:
     $ ./scripts/feeds update mobile_broadband
 
-3) Install all packages from the feed:
+4) Install all packages from the feed:
     $ ./scripts/feeds install -p mobile_broadband -a
 
-4) Enable the packages in menuconfig:
+5) Enable the packages in menuconfig:
     $ make menuconfig
         Libraries/libmbim
         Libraries/libqmi
         Network/modemmanager
 
-5) Or compile the packages directly:
+6) Or compile the packages directly:
     $ make package/libmbim/{clean,compile,install}
     $ make package/libqmi/{clean,compile,install}
     $ make package/modemmanager/{clean,compile,install}
     $ make package/index
 
-6) Once installed, you can configure the 2G/3G/4G modem connections directly in
+7) Once installed, you can configure the 2G/3G/4G modem connections directly in
    /etc/config/network as in the following example:
               
     config interface 'WWAN'
@@ -40,4 +45,6 @@ Install it in the following way:
 	    option apn 'Broadband'
 	    option metric '20'
 
-NOTE - for Luci WebUI support see - https://github.com/sfx2000/luci-proto-modemmanager
+NOTE - for Luci WebUI support 
+
+    see - https://github.com/sfx2000/luci-proto-modemmanager
