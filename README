@@ -11,7 +11,7 @@ Install it in the following way:
 
 1) Edit your feeds.conf and add the configuration of the new feed:
     $ vim feeds.conf
-        src-git mobile_broadband https://gitlab.freedesktop.org/mobile-broadband/mobile-broadband-openwrt.git
+        src-git mobile_broadband https://github.com/sfx2000/mobile-broadband-openwrt.git
 
 2) Update the feed:
     $ ./scripts/feeds update mobile_broadband
